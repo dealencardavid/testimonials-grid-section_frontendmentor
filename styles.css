@@ -1,0 +1,227 @@
+/* ==================== */
+/* Colors and Spacing System */
+/* ==================== */
+
+:root {
+  /* Primary Colors */
+  --dark-purple: #733fc8;
+  --light-purple: #a775f1;
+  /* Neutral Colors */
+  --light-blue: #ecf2f8;
+  --dark-blue: #48556a;
+  --darker-blue: #19202d;
+
+  /* Shade */
+  --white: #fff;
+}
+
+/* =================== */
+/* Typography Styles */
+/* =================== */
+/* All styles inherit Barlow Semi Condensed */
+
+.text__card-heading {
+  font-weight: 600;
+  font-size: 2rem;
+  line-height: 100%;
+  letter-spacing: 0px;
+}
+
+.text__card-username {
+  /* inherit body font size of 1.3rem */
+  font-weight: 500;
+  line-height: 100%;
+  letter-spacing: 0px;
+}
+
+.text__card-status {
+  font-size: 1.1rem;
+  font-weight: 500;
+  line-height: 100%;
+  letter-spacing: 0px;
+  opacity: 50%;
+}
+
+.text__card-body {
+  /* inherit body font size of 1.3rem */
+  font-weight: 500;
+  line-height: 18px;
+  letter-spacing: 0px;
+  opacity: 70%;
+}
+
+/* =================== */
+/* Settings */
+/* =================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  /* 1rem = 10px */
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Barlow Semi Condensed", sans-serif;
+  font-size: 1.3rem;
+  font-weight: 500;
+  background-color: var(--light-blue);
+  /* height: 100dvh; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8rem;
+}
+
+/* =================== */
+/* Reusable components */
+/* =================== */
+
+.hidden {
+  visibility: hidden;
+  position: absolute;
+}
+
+.card__header__avatar-active {
+  border: 2px solid var(--light-purple);
+}
+
+.card__quotes {
+  position: absolute;
+  right: 8rem;
+  top: 0;
+}
+
+.index-1 {
+  z-index: 1;
+}
+
+/* =================== */
+/* Styles */
+/* =================== */
+
+main {
+  max-width: 111rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 2.4rem 3rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.card {
+  min-height: 26.6rem;
+  height: 100%;
+
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1.8rem;
+  border-radius: 0.8rem;
+  padding: 2.6rem 3.2rem;
+  box-shadow: 40px 60px 50px -47px rgba(72, 85, 106, 0.25);
+}
+
+.card__header {
+  display: flex;
+  gap: 1.6rem;
+}
+
+.card__header__avatar {
+  border-radius: 100%;
+}
+
+.card__header__info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+/* =================== */
+/* Unique Card Styles */
+/* =================== */
+
+#card__danielClifford {
+  grid-column-start: span 2;
+  background-color: var(--dark-purple);
+  color: var(--white);
+}
+
+#card__jonathanWalters {
+  background-color: var(--dark-blue);
+  color: var(--white);
+}
+
+#card__jeanetteHarmon {
+  background-color: var(--white);
+  color: var(--dark-blue);
+}
+
+#card__patrickAbrams {
+  grid-column-start: span 2;
+  background-color: var(--darker-blue);
+  color: var(--light-blue);
+}
+
+#card__patrickAdams .text__card-heading {
+  color: var(--light-blue);
+}
+
+#card__kiraWhittle {
+  grid-column-start: 4;
+  grid-row-start: span 2;
+  grid-row-end: 3;
+  background-color: var(--white);
+  color: var(--dark-blue);
+}
+
+/* =================== */
+/* Responsiveness */
+/* =================== */
+
+@media (max-width: 940px) {
+  main {
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+  }
+
+  /* =================== */
+  /* Reusable components */
+  /* =================== */
+
+  .card__quotes {
+    right: 2.4rem;
+  }
+
+  /* =================== */
+  /* Unique Card Styles */
+  /* =================== */
+
+  #card__danielClifford {
+    grid-column: 1/2;
+  }
+
+  #card__jonathanWalters {
+    grid-row-start: 2;
+  }
+
+  #card__jeanetteHarmon {
+    grid-row-start: 3;
+  }
+
+  #card__patrickAbrams {
+    grid-column: 1/2;
+  }
+
+  #card__kiraWhittle {
+    grid-column: 1/2;
+    grid-row: 5/6;
+  }
+}
